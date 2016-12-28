@@ -38,5 +38,7 @@ defmodule CorsApp.Endpoint do
     key: "_cors_app_key",
     signing_salt: "B6lMwkvc"
 
+  plug Corsica, origins: "*"
+
   plug CorsApp.Router
 end
