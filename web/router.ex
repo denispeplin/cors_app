@@ -19,6 +19,12 @@ defmodule CorsApp.Router do
     get "/", PageController, :index
   end
 
+  scope "/", CorsApp do
+    pipe_through :api
+
+    get "/api", ApiController, :index
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", CorsApp do
   #   pipe_through :api
